@@ -15,7 +15,7 @@ minLeft cmp (Heap _ l r)         = cmp (root l) (root r)
 
 heapInsert cmp Empty x        = Heap x Empty Empty
 heapInsert cmp (Heap v l r) x = if cmp x v then Heap x r (heapInsert cmp l v)
-                              else Heap v r (heapInsert cmp l x)
+                                else Heap v r (heapInsert cmp l x)
 
 removeMin cmp Empty                = error "Tried to remove from empty heap"
 removeMin cmp (Heap v Empty Empty) = Empty
